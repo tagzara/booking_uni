@@ -8,13 +8,13 @@ async function createHotel(hotelData) {
 }
 
 async function getAllHotels() {
-    const hotels = await Hotel.find({});
+    const hotels = await Hotel.find({}).lean();
 
     return hotels;
 }
 
 async function getHotelById() {
-    const hotel = await Hotel.findById(id);
+    const hotel = await Hotel.findById(id).lean();
 
     return hotel;
 }
