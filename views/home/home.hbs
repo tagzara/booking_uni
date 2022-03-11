@@ -1,5 +1,15 @@
         <section id="viewCatalog" class="background-img">
-            <div class="added-hotels">
+            
+                {{#each hotels}}
+                <div class="added-hotels">
+                    {{>hotel}}
+                </div>
+                {{else}}
+                 <div class="guest">
+                    There are no Hotels found...
+                </div>
+                {{/each}} 
+{{!-- 
                 <a href="" class="added-hotel">
                     <img src="https://exp.cdn-hotels.com/hotels/1000000/910000/900600/900502/396468bc_z.jpg?impolicy=fcrop&w=500&h=333&q=medium" alt=""
                         class="picture-added-hotel">
@@ -17,9 +27,6 @@
                         alt="" class="picture-added-hotel">
                     <h3>Hotel Berlin</h3>
                     <span>Free rooms: 15</span>
-                </a>
-            </div>
-            <!-- <div class="guest">
-                There are no Hotels found...
-            </div> -->
+                </a> --}}
+                        
         </section>

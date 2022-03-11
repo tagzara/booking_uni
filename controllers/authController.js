@@ -10,7 +10,9 @@ router.post(
     '/register',
     isGuest(),
     body('email', 'Invalid email').isEmail(),
-    body('username').isLength({ min: 3 }).withMessage('Username must be at least 3 characters long'),
+    body('password')
+        .isLength({ min: 5 }).withMessage('Password must be at least 5 characters long').bail()
+        .matches(/[a-zA-Z0-9]/).withMessage('Password may contain only english letters and numbers'),
     body('repeatPassword').custom((value, { req }) => {
         if (value != req.body.password) {
             throw new Error('Password don\'t match');
